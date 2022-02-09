@@ -26,6 +26,14 @@ class TaskController extends AbstractController
         ]);
     }
 
+    #[Route('/tasks/ending', name: 'task_list_ending')]
+    public function listEnding(EntityManagerInterface $em): Response
+    {
+        return $this->render('task/list.html.twig', [
+            'tasks' => $em->getRepository('App:Task')->findBy(['isDone'=>true])
+        ]);
+    }
+
     /**
      * @param Request $request
      * @param Security $security
