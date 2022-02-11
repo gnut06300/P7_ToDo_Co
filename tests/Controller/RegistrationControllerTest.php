@@ -25,6 +25,7 @@ class RegistrationControllerTest extends WebTestCase
     {
         $this->loginUser();
         $crawler = $this->client->request('GET', '/register');
+        // print($this->client->getResponse()->getContent());
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
         $uniqId = uniqid();
         $form = $crawler->selectButton('Ajouter')->form();

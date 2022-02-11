@@ -37,11 +37,11 @@ class UserControllerTest extends WebTestCase
 
         $crawler = $this->client->request('GET', '/users/'.$this->userId.'/edit');
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
-
+        $uniqId = uniqid();
         $form = $crawler->selectButton('Modifier')->form();
-        $form['edit_user_form[username]'] = 'usertest1';
+        $form['edit_user_form[username]'] = 'usertest'.$uniqId;
         // $form['edit_user_form[plainPassword]'] = 'password';
-        $form['edit_user_form[email]'] = 'usertest1@gnut.eu';
+        $form['edit_user_form[email]'] = 'usertest'.$uniqId.'@gnut.eu';
         $form['edit_user_form[roles][0]']->tick();
         $this->client->submit($form);
 
