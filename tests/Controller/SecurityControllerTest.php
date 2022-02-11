@@ -24,9 +24,12 @@ class SecurityControllerTest extends WebTestCase
     public function testLogout()
     {
         $this->loginUser();
-        $crawler = $this->client->request('GET', '/');
-        $crawler->selectLink('Se déconnecter')->link();
+        $crawler = $this->client->request('GET', '/logout');
+        // $crawler->selectLink('Se déconnecter')->link();
         $this->throwException(new \Exception('This method can be blank - it will be intercepted by the logout key on your firewall.'));
+        $this->assertEquals(302, $this->client->getResponse()->getStatusCode());
+
+        $crawler = $this->client->followRedirect();
         $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
 
     }
