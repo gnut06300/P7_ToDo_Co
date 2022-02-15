@@ -38,11 +38,11 @@ class UserTest extends WebTestCase
         $this->assertSame('password', $this->user->getPassword());
     }
 
-    // public function testIsVerified()
-    // {
-    //     $this->user->setIsVerifield(true);
-    //     $this->assertSame(true, $this->user->IsVerified());
-    // }
+    public function testIsVerified()
+    {
+        $this->user->setIsVerified(true);
+        $this->assertSame(true, $this->user->IsVerified());
+    }
 
     public function testUsername(): void
     {
