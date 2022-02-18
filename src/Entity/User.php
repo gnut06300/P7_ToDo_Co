@@ -25,6 +25,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $id;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
+    #[NotBlank(message:'Vous devez saisir un email.')]
     private $email;
 
     #[ORM\Column(type: 'json')]
