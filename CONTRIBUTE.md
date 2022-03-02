@@ -53,5 +53,5 @@ Le workflow (cheminement à suivre) pour contribuer au projet est le suivant.
 ###7) Soumettre la pull request
 
    Si vos tests ont été réalisé avec succès, vous pouvez pousser votre travail sur le repository.
-   Faites ensuite une demande de pull request afin de fusionner (merge) votre branche sur develop.
+   Faites ensuite une demande de pull request afin de fusionner (merge) votre branche sur main.
    Seul le responsable du projet peut valider le merge.
